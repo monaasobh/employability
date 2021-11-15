@@ -1518,11 +1518,11 @@ if pick =="Executive Summary":
     all_text2 = all_text1.lower()
 
     # in the below code if the word isnt in stop words then we want it.
-    def cleaning_stopwords(text):
-        return " ".join([word for word in str(text).split() if word not in stopwords])
+    # def cleaning_stopwords(text):
+    #     return " ".join([word for word in str(text).split() if word not in stopwords])
 
-    dfTtext01 = chal01.apply(lambda message : cleaning_stopwords(message))
-    dfTtext02= dfTtext01.str.lower()
+    # dfTtext01 = chal01.apply(lambda message : cleaning_stopwords(message))
+    # dfTtext02= dfTtext01.str.lower()
     c1, c2, c3 = st.beta_columns((2,0.5,2))
     with c1:
         challenges= np.where(chal01.str.contains('Nationality' or 'Nepotism' or "nationality") ,"Nationality",
