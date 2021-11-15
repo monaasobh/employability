@@ -1596,11 +1596,11 @@ if pick =="Executive Summary":
         df['Training Needs'] = dfye.apply(matcher)
         dftrains1 = df['Training Needs'].dropna()
         dfTtext = dftrains1.astype(str)
-        # in the below code if the word isnt in stop words then we want it.
-        def cleaning_stopwords(text):
-            return " ".join([word for word in str(text).split() if word not in stopwords])
-
-        dfTtext = dfTtext.apply(lambda message : cleaning_stopwords(message))
+        # # in the below code if the word isnt in stop words then we want it.
+        # def cleaning_stopwords(text):
+        #     return " ".join([word for word in str(text).split() if word not in stopwords])
+        #
+        # dfTtext = dfTtext.apply(lambda message : cleaning_stopwords(message))
         dfTtext1= dfTtext.str.lower()
         temp = dfTtext1
         areas1 = np.where(temp.str.contains("social") ,"Social Skills",
