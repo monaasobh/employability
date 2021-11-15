@@ -19,8 +19,6 @@ from gensim import utils
 from gensim.utils import simple_preprocess
 from gensim.models import CoherenceModel
 import spacy
-nlp = spacy.load("en_core_web_sm")
-nlp.max_length = 1850000
 df = pd.read_csv(r'C:\Users\mimi_\OneDrive\Documents\Atom\responsesfinal.csv')
 transposed_df1 = pd.read_csv(r'C:\Users\mimi_\OneDrive\Documents\Atom\population.csv')
 leb =  pd.read_csv(r'C:\Users\mimi_\OneDrive\Documents\Atom\lebanon.csv')
