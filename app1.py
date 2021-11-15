@@ -10,7 +10,6 @@ from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import seaborn as sns
 from matplotlib.backends.backend_agg import RendererAgg
-from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 import wordcloud
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
