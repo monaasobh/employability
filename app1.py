@@ -30,6 +30,8 @@ wb = pd.read_csv('wb.csv')
 rg = pd.read_csv('Regis.csv')
 rs = pd.read_csv('registered.csv')
 st.set_option('deprecation.showPyplotGlobalUse', False)
+import nltk
+from nltk.tokenize import word_tokenize
 nltk.download('stopwords')
 
 pick = st.sidebar.selectbox("What do you want to know?", ('Overview: The Refugee Situation In Lebanon',
