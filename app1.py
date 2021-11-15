@@ -1515,6 +1515,7 @@ if pick =="Executive Summary":
     all_text2 = all_text1.lower()
 
     # in the below code if the word isnt in stop words then we want it.
+    nltk.download('stopwords')
     def cleaning_stopwords(text):
         return " ".join([word for word in str(text).split() if word not in stopwords])
 
