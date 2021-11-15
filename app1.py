@@ -19,6 +19,7 @@ from gensim import utils
 from gensim.utils import simple_preprocess
 from gensim.models import CoherenceModel
 import spacy
+from wordcloud import STOPWORDS
 df = pd.read_csv('responsesfinal.csv')
 transposed_df1 = pd.read_csv('population.csv')
 leb =  pd.read_csv('lebanon.csv')
@@ -449,7 +450,7 @@ if pick == "The Data: Constituents and Features":
 
     c1, c2, c3 = st.beta_columns((2, 0.5, 2))
     with c1:
-        cor = pd.read_csv(r'C:\Users\mimi_\OneDrive\Documents\Atom\coor.txt')
+        cor = pd.read_csv('coor.txt')
         mapbox_access_token='eyJ1IjoibW9uenMiLCJhIjoiY2tzZ3BoNDFvMW0zejJwbzMzbml0aDVlNyJ9.lKnYbpwc1uc7Dq09OabDmA'
         fig = go.Figure(go.Scattermapbox(
         fill = "none",
@@ -960,6 +961,7 @@ if pick == "Educational Levels and Employment Status":
 if pick == "Industries, Training, and More":
     import nltk
     from nltk.tokenize import word_tokenize
+    nltk.download('stopwords')
     from nltk.corpus import stopwords
     import string
     stopwords = nltk.corpus.stopwords.words('english')
@@ -1252,10 +1254,10 @@ if pick == "Industries, Training, and More":
         height=650)
         st.plotly_chart(fig)
 
-import nltk
-from nltk.corpus import stopwords
-import string
-stopwords = nltk.corpus.stopwords.words('english')
+# import nltk
+# from nltk.corpus import stopwords
+# import string
+# stopwords = nltk.corpus.stopwords.words('english')
 
 # if pick == 'Challenges and Obstacles: Implementing LDA and Topic Modelling':
 #
