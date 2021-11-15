@@ -30,6 +30,7 @@ wb = pd.read_csv('wb.csv')
 rg = pd.read_csv('Regis.csv')
 rs = pd.read_csv('registered.csv')
 st.set_option('deprecation.showPyplotGlobalUse', False)
+nltk.download('stopwords')
 
 pick = st.sidebar.selectbox("What do you want to know?", ('Overview: The Refugee Situation In Lebanon',
             "The Data: Constituents and Features", "Educational Levels and Employment Status", "Industries, Training, and More", "Executive Summary")) #"Challenges and Obstacles: Implementing LDA and Topic Modelling",
@@ -1515,8 +1516,6 @@ if pick =="Executive Summary":
     all_text2 = all_text1.lower()
 
     # in the below code if the word isnt in stop words then we want it.
-    import nltk
-    nltk.download('stopwords')
     def cleaning_stopwords(text):
         return " ".join([word for word in str(text).split() if word not in stopwords])
 
