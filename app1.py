@@ -16,7 +16,6 @@ from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 import gensim, spacy, logging, warnings
 import gensim.corpora as corpora
 from gensim import utils
-import pattern
 from gensim.utils import simple_preprocess
 from gensim.models import CoherenceModel
 import spacy
