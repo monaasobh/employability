@@ -19,15 +19,15 @@ from gensim import utils
 from gensim.utils import simple_preprocess
 from gensim.models import CoherenceModel
 import spacy
-df = pd.read_csv(r'C:\Users\mimi_\OneDrive\Documents\Atom\responsesfinal.csv')
-transposed_df1 = pd.read_csv(r'C:\Users\mimi_\OneDrive\Documents\Atom\population.csv')
-leb =  pd.read_csv(r'C:\Users\mimi_\OneDrive\Documents\Atom\lebanon.csv')
-jor = pd.read_csv(r'C:\Users\mimi_\OneDrive\Documents\Atom\jor.csv')
-syr = pd.read_csv(r'C:\Users\mimi_\OneDrive\Documents\Atom\syr.csv')
-gz = pd.read_csv(r'C:\Users\mimi_\OneDrive\Documents\Atom\gz.csv')
-wb = pd.read_csv(r'C:\Users\mimi_\OneDrive\Documents\Atom\wb.csv')
-rg = pd.read_csv(r'C:\Users\mimi_\OneDrive\Documents\Atom\Regis.csv')
-rs = pd.read_csv(r'C:\Users\mimi_\OneDrive\Documents\Atom\registered.csv')
+df = pd.read_csv('responsesfinal.csv')
+transposed_df1 = pd.read_csv('population.csv')
+leb =  pd.read_csv('lebanon.csv')
+jor = pd.read_csv('jor.csv')
+syr = pd.read_csv('syr.csv')
+gz = pd.read_csv('gz.csv')
+wb = pd.read_csv('wb.csv')
+rg = pd.read_csv('Regis.csv')
+rs = pd.read_csv('registered.csv')
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
 pick = st.sidebar.selectbox("What do you want to know?", ('Overview: The Refugee Situation In Lebanon',
