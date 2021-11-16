@@ -69,6 +69,7 @@ if pick == 'Overview: The Refugee Situation In Lebanon':
             xaxis_title="Camp Name",
             yaxis_title="Population")
             st.plotly_chart(fig)
+            st.markdown("Data source: UNRWA online database.")
 
         with c3:
             trace2 = go.Scatter(
@@ -86,47 +87,7 @@ if pick == 'Overview: The Refugee Situation In Lebanon':
             fig.update_layout(
             yaxis_title="Population")
             st.plotly_chart(fig)
-
-        c1, c2, c3 = st.beta_columns((2, 0.5, 2))
-        with c1:
-            labels = 'Education', 'Health'
-            sizes = [1707, 297]
-            explode = (0.1, 0)  # explode 1st slice
-            fig1 = px.pie(names = labels, values=sizes, color_discrete_sequence=px.colors.sequential.Tealgrn, hole=0.5, title = 'Sector Distribution')
-            fig1.update_layout(width=620, height=620, plot_bgcolor='rgba(0,0,0,0)')
-            fig1.update_traces(
-            texttemplate="%{percent:.1%f}")
-            st.plotly_chart(fig1)
-            #st.write('Data source: UNRWA online database.')
-
-            #data = [trace]
-            #ayout = go.Layout(barmode = "group", title = 'Sector Distribution', width=800, height=800)
-            #fig = go.Figure(data = data, layout = layout)
-            #st.plotly_chart(fig)
-
-        with c3:
-            dfRl = rs.Lebanon
-            dfFl= rs.Status
-            countR1= dfRl.values
-            countF1=dfFl.index
-            trace1 = go.Bar(
-                x=dfFl,
-                y=dfRl.values, text = dfRl.values,  textposition='auto',
-                marker=dict(
-                #color = np.random.randn(500), #set color equal to a variable
-                    color = dfRl.values,
-                    colorscale='Tealgrn',
-                    showscale=False
-                    ),
-                    )
-            data1 = [trace1]
-            layout = go.Layout(barmode = "group", title='Registration of Refugees', width=900, height=800, plot_bgcolor='rgba(0,0,0,0)')
-            fig = go.Figure(data = data1, layout = layout)
-            fig.update_layout(
-            xaxis_title="Type of Registration",
-            yaxis_title="Population")
-            fig
-            st.markdown("Data source: UNRWA online database. UNRWA's definition of Other Registered Persons refer to those who, at the time of original registration did not satisfy all of UNRWA’s Palestine refugee criteria, but who were determined to have suffered significant loss and/or hardship for reasons related to the 1948 conflict in Palestine; they also include persons who belong to the families of other registered persons.")
+            st.markdown("Data source: UNRWA online database.")
 
     if add_selectbox == 'Jordan': #and add_slider == "1970":
         c1, c2, c3 = st.beta_columns((2, 0.5, 2))
@@ -152,6 +113,7 @@ if pick == 'Overview: The Refugee Situation In Lebanon':
             xaxis_title="Camp Name",
             yaxis_title="Population")
             st.plotly_chart(fig)
+            st.markdown("Data source: UNRWA online database.")
 
         with c3:
             trace2 = go.Scatter(
@@ -166,41 +128,8 @@ if pick == 'Overview: The Refugee Situation In Lebanon':
                  )
             fig = go.Figure(data = data, layout = layout)
             st.plotly_chart(fig)
+            st.markdown("Data source: UNRWA online database.")
         c1, c2, c3 = st.beta_columns((2, 0.5, 2))
-
-        with c1:
-            labels = 'Education', 'Health'
-            sizes = [4641, 680]
-            explode = (0.1, 0)  # explode 1st slice
-            fig = px.pie(names = labels, values=sizes, color_discrete_sequence=px.colors.sequential.Tealgrn, hole=0.5, title = 'Sector Distribution')
-            fig.update_layout(width=620, height=620,)
-            fig.update_traces(
-            texttemplate="%{percent:.1%f}")
-            st.plotly_chart(fig)
-
-        with c3:
-            with c3:
-                dfRl = rs.Jordan
-                dfFl= rs.Status
-                countR1= dfRl.values
-                countF1=dfFl.index
-                trace1 = go.Bar(
-                    x=dfFl,
-                    y=dfRl.values, text = dfRl.values,  textposition='auto',
-                    marker=dict(
-                    #color = np.random.randn(500), #set color equal to a variable
-                        color = dfRl.values,
-                        colorscale='Tealgrn',
-                        showscale=False
-                        ),
-                        )
-                data1 = [trace1]
-                layout = go.Layout(barmode = "group", title='Registration of Refugees', width=900, height=800, plot_bgcolor='rgba(0,0,0,0)')
-                fig = go.Figure(data = data1, layout = layout)
-                fig.update_layout(
-                xaxis_title="Type of Registration",
-                yaxis_title="Population")
-                fig
 
     if add_selectbox == 'Syria': #and add_slider == "1970":
         c1, c2, c3 = st.beta_columns((2, 0.5, 2))
@@ -220,9 +149,11 @@ if pick == 'Overview: The Refugee Situation In Lebanon':
                     ),
                     )
             data = [trace]
-            layout = go.Layout(barmode = "group", title ='Population Across Different Camps In Syria')
+            layout = go.Layout(barmode = "group", title ='Population Across Different Camps In Syria',  plot_bgcolor='rgba(0,0,0,0)')
             fig = go.Figure(data = data, layout = layout)
             st.plotly_chart(fig)
+            st.markdown("Data source: UNRWA online database.")
+
         with c3:
             trace2 = go.Scatter(
                         x = transposed_df1.Year,
@@ -237,41 +168,7 @@ if pick == 'Overview: The Refugee Situation In Lebanon':
                  )
             fig = go.Figure(data = data, layout = layout)
             st.plotly_chart(fig)
-
-        c1, c2, c3 = st.beta_columns((2, 0.5, 2))
-
-        with c1:
-            labels = 'Education', 'Health'
-            sizes = [1922, 430]
-            explode = (0.1, 0)  # explode 1st slice
-            fig = px.pie(names = labels, values=sizes, color_discrete_sequence=px.colors.sequential.Tealgrn, hole=0.5, title = 'Sector Distribution')
-            fig.update_layout(width=620, height=620,)
-            fig.update_traces(
-            texttemplate="%{percent:.1%f}")
-            st.plotly_chart(fig)
-        with c3:
-            with c3:
-                dfRl = rs.Syria
-                dfFl= rs.Status
-                countR1= dfRl.values
-                countF1=dfFl.index
-                trace1 = go.Bar(
-                    x=dfFl,
-                    y=dfRl.values, text = dfRl.values,  textposition='auto',
-                    marker=dict(
-                    #color = np.random.randn(500), #set color equal to a variable
-                        color = dfRl.values,
-                        colorscale='Tealgrn',
-                        showscale=False
-                        ),
-                        )
-                data1 = [trace1]
-                layout = go.Layout(barmode = "group", title='Registration of Refugees', width=900, height=800, plot_bgcolor='rgba(0,0,0,0)')
-                fig = go.Figure(data = data1, layout = layout)
-                fig.update_layout(
-                xaxis_title="Type of Registration",
-                yaxis_title="Population")
-                fig
+            st.markdown("Data source: UNRWA online database.")
 
     if add_selectbox == 'West Bank': #and add_slider == "1970":
         c1, c2, c3 = st.beta_columns((2, 0.5, 2))
@@ -297,6 +194,7 @@ if pick == 'Overview: The Refugee Situation In Lebanon':
             xaxis_title="Camp Name",
             yaxis_title="Population")
             st.plotly_chart(fig)
+            st.markdown("Data source: UNRWA online database.")
 
         with c3:
             trace2 = go.Scatter(
@@ -312,41 +210,7 @@ if pick == 'Overview: The Refugee Situation In Lebanon':
                  )
             fig = go.Figure(data = data, layout = layout)
             st.plotly_chart(fig)
-
-        c1, c2, c3 = st.beta_columns((2, 0.5, 2))
-
-        with c1:
-            labels = 'Education', 'Health'
-            sizes = [2332, 693]
-            fig = px.pie(names = labels, values=sizes, color_discrete_sequence=px.colors.sequential.Tealgrn, hole=0.5, title = 'Sector Distribution')
-            fig.update_layout(width=620, height=620,)
-            fig.update_traces(
-            texttemplate="%{percent:.1%f}")
-            st.plotly_chart(fig)
-
-        with c3:
-            with c3:
-                dfRl = rs['West Bank']
-                dfFl= rs.Status
-                countR1= dfRl.values
-                countF1=dfFl.index
-                trace1 = go.Bar(
-                    x=dfFl,
-                    y=dfRl.values, text = dfRl.values,  textposition='auto',
-                    marker=dict(
-                    #color = np.random.randn(500), #set color equal to a variable
-                        color = dfRl.values,
-                        colorscale='Tealgrn',
-                        showscale=False
-                        ),
-                        )
-                data1 = [trace1]
-                layout = go.Layout(barmode = "group", title='Registration of Refugees', width=900, height=800, plot_bgcolor='rgba(0,0,0,0)')
-                fig = go.Figure(data = data1, layout = layout)
-                fig.update_layout(
-                xaxis_title="Type of Registration",
-                yaxis_title="Population")
-                fig
+            st.markdown("Data source: UNRWA online database.")
 
     if add_selectbox == 'Gaza': #and add_slider == "1970":
         c1, c2, c3 = st.beta_columns((2, 0.5, 2))
@@ -372,6 +236,8 @@ if pick == 'Overview: The Refugee Situation In Lebanon':
             xaxis_title="Camp Name",
             yaxis_title="Population")
             st.plotly_chart(fig)
+            st.markdown("Data source: UNRWA online database.")
+
         with c3:
             trace2 = go.Scatter(
                         x = transposed_df1.Year,
@@ -386,45 +252,8 @@ if pick == 'Overview: The Refugee Situation In Lebanon':
                  )
             fig = go.Figure(data = data, layout = layout)
             st.plotly_chart(fig)
+            st.markdown("Data source: UNRWA online database.")
 
-        c1, c2, c3 = st.beta_columns((2, 0.5, 2))
-
-        with c1:
-            labels = 'Education', 'Health'
-            sizes = [9544, 886]
-            explode = (0.1, 0)  # explode 1st slice
-            fig = px.pie(names = labels, values=sizes, color_discrete_sequence=px.colors.sequential.Tealgrn, hole=0.5, title = 'Sector Distribution')
-            fig.update_layout(width=620, height=620,)
-            fig.update_traces(
-            texttemplate="%{percent:.1%f}")
-            st.plotly_chart(fig)
-        with c3:
-            dfRl = rs['Gaza Strip']
-            dfFl= rs.Status
-            countR1= dfRl.values
-            countF1=dfFl.index
-            trace1 = go.Bar(
-                x=dfFl,
-                y=dfRl.values, text = dfRl.values,  textposition='auto',
-                marker=dict(
-                #color = np.random.randn(500), #set color equal to a variable
-                    color = dfRl.values,
-                    colorscale='Tealgrn',
-                    showscale=False
-                    ),
-                    )
-            data1 = [trace1]
-            layout = go.Layout(barmode = "group", title='Registration of Refugees', width=900, height=800, plot_bgcolor='rgba(0,0,0,0)')
-            fig = go.Figure(data = data1, layout = layout)
-            fig.update_layout(
-            xaxis_title="Type of Registration",
-            yaxis_title="Population")
-
-            fig
-#    add_slider = st.select_slider(
-#    'Select Year',
-#    options=['1970', '1980', '1990', '2000', '2004', '2009', '2018']
-#      )
 if pick == "The Data: Constituents and Features":
 
     st.title('Data Overview')
@@ -446,10 +275,6 @@ if pick == "The Data: Constituents and Features":
         x = st.write(number_of_rows)
 
         st.markdown('#')
-
-    st.markdown('If you want to see what the dataset responses look like, click on the below button.')
-    if st.button('Data'):
-        df
 
     c1, c2, c3 = st.beta_columns((2, 0.5, 2))
     with c1:
